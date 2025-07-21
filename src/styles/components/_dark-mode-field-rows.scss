@@ -1,0 +1,13 @@
+/* Additional dark mode fixes for field rows */
+.schema-builder__field-row.dark-theme {
+  .field-name-input {
+    background-color: #1a202c !important;
+    color: white !important;
+    border-color: #4a5568 !important;
+  }
+  
+  .ant-select-selector {
+    background-color: #1a202c !important;
+    border-color: #4a5568 !important;
+  }
+}

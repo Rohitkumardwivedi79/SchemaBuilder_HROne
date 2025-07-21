@@ -1,0 +1,333 @@
+// Schema Builder component styles
+
+// Theme-based styles
+.light-theme {
+  --bg-color: #{$light-bg};
+  --card-bg: #{$light-card-bg};
+  --text-color: #{$light-text};
+  --text-secondary: #{$light-text-secondary};
+  --border-color: #{$light-border};
+  --shadow: #{$light-shadow};
+  --hover-bg: #{$light-hover};
+}
+
+.dark-theme {
+  --bg-color: #{$dark-bg};
+  --card-bg: #{$dark-card-bg};
+  --text-color: #{$dark-text};
+  --text-secondary: #{$dark-text-secondary};
+  --border-color: #{$dark-border};
+  --shadow: #{$dark-shadow};
+  --hover-bg: #{$dark-hover};
+}
+
+// App layout
+.app-layout {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  
+  .app-header {
+    background: linear-gradient(90deg, $primary-color-dark, $primary-color);
+    padding: 0 24px;
+    box-shadow: 0 2px 12px var(--shadow);
+    height: 70px;
+    line-height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+    
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .header-icon {
+      font-size: 24px;
+      color: #ffffff;
+    }
+    
+    .app-title {
+      margin: 0;
+      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .pro-badge {
+      .ant-badge-count {
+        background-color: $accent-color;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
+    .theme-toggle {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .app-content {
+    flex: 1;
+    padding: 24px;
+    
+    .app-intro {
+      margin-bottom: 24px;
+      text-align: center;
+      
+      .app-description {
+        font-size: 16px;
+        color: var(--text-secondary);
+        
+        .anticon {
+          color: $secondary-color;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  
+  .app-footer {
+    text-align: center;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 16px;
+    
+    .footer-text {
+      color: var(--text-secondary);
+      font-size: 14px;
+      
+      .anticon {
+        margin-right: 8px;
+        color: $primary-color;
+      }
+    }
+  }
+  
+  .app-content {
+    padding: 24px;
+  }
+}
+
+// Schema builder container
+.schema-builder-container {
+  margin-top: 16px;
+  
+  .schema-fields-card,
+  .json-preview-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow);
+    height: 100%;
+    
+    .ant-card-head {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      border-radius: 12px 12px 0 0;
+      
+      .ant-card-head-title {
+        color: var(--text-color);
+        font-weight: 600;
+      }
+    }
+    
+    .ant-card-body {
+      background-color: var(--card-bg);
+      border-radius: 0 0 12px 12px;
+    }
+  }
+  
+  .schema-fields-container {
+    margin-bottom: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  
+  .add-field-button {
+    width: 100%;
+    border-radius: 8px;
+    height: 40px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color-light;
+      border-color: $primary-color-light;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:active {
+      background-color: $primary-color-dark;
+      border-color: $primary-color-dark;
+      transform: translateY(0);
+    }
+    
+    &:disabled {
+      background-color: rgba($primary-color, 0.5);
+      border-color: rgba($primary-color, 0.5);
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  
+  .validation-message {
+    color: #f56565;
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
+
+// Field row styles
+.schema-builder__field-row {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: all 0.3s ease;
+  border-left: 3px solid $primary-color;
+  
+  &:hover {
+    box-shadow: 0 4px 12px var(--shadow);
+  }
+  
+  .field-row-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .field-name-input {
+    min-width: 150px;
+    flex: 1;
+    border-radius: 6px;
+  }
+  
+  .field-type-select {
+    min-width: 150px;
+    flex: 1;
+    border-radius: 6px;
+  }
+  
+  .field-icon {
+    color: $primary-color;
+  }
+  
+  .field-toggle {
+    background-color: var(--bg-color);
+  }
+  
+  .delete-field-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+}
+
+// Nested content styles
+.schema-builder__nested-content {
+  margin-top: 12px;
+  padding: 12px;
+  border-left: 3px solid $secondary-color;
+  border-radius: 0 8px 8px 0;
+  background-color: transparent;
+  max-width: 95%;
+  margin-left: auto;
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, $secondary-color, rgba($secondary-color, 0.3));
+  }
+  
+  // Limit nesting levels visually
+  .schema-builder__nested-content {
+    border-left-color: $accent-color;
+    
+    &:before {
+      background: linear-gradient(to bottom, $accent-color, rgba($accent-color, 0.3));
+    }
+    
+    .schema-builder__nested-content {
+      border-left-color: $primary-color;
+      
+      &:before {
+        background: linear-gradient(to bottom, $primary-color, rgba($primary-color, 0.3));
+      }
+    }
+  }
+}
+
+// Divider styles
+.schema-builder__divider {
+  margin: 16px 0 8px;
+  border-color: var(--border-color);
+}
+
+// JSON Preview styles
+.json-preview {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  border-radius: 8px;
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+  }
+}

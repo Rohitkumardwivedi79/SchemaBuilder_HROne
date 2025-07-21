@@ -1,0 +1,23 @@
+.dark-theme {
+  /* Make sure input text is visible in dark mode */
+  .schema-builder__field-row .field-name-input,
+  .nested-field-wrapper .field-name-input,
+  .array-field-wrapper .field-name-input {
+    color: white !important;
+    background-color: #1a202c !important;
+    border-color: #4a5568 !important;
+  }
+  
+  .schema-builder__field-row .ant-select-selector,
+  .nested-field-wrapper .ant-select-selector,
+  .array-field-wrapper .ant-select-selector {
+    background-color: #1a202c !important;
+    border-color: #4a5568 !important;
+  }
+  
+  .schema-builder__field-row .ant-select-selection-item,
+  .nested-field-wrapper .ant-select-selection-item,
+  .array-field-wrapper .ant-select-selection-item {
+    color: white !important;
+  }
+}

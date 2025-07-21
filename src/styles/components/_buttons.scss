@@ -1,0 +1,29 @@
+// Button styles
+.add-field-button, .nested-field-button {
+  margin-top: 16px;
+  width: 100%;
+  background: $primary-color;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: $primary-color-dark !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Delete button (cross icon)
+.delete-icon {
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}

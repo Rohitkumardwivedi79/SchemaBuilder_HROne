@@ -1,0 +1,132 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Ant Design overrides */
+.ant-layout {
+  background: var(--bg-color) !important;
+}
+
+.ant-card {
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.ant-card-head-title {
+  color: var(--text-color) !important;
+}
+
+/* Input fields */
+.ant-input,
+.ant-select-selector,
+.ant-select-selection-item {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme {
+  .ant-input,
+  .ant-select-selector {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-color: #4a5568 !important;
+  }
+  
+  .ant-input {
+    color: white !important;
+  }
+  
+  .ant-input-prefix {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .ant-select-selection-item {
+    color: white !important;
+  }
+  
+  .ant-select-arrow {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Select dropdown */
+.ant-select-dropdown {
+  background-color: var(--card-bg) !important;
+}
+
+.field-type-dropdown.dark-theme {
+  background-color: #2d3748 !important;
+  
+  .ant-select-item {
+    color: #e2e8f0 !important;
+  }
+  
+  .ant-select-item-option-selected,
+  .ant-select-item-option-active {
+    background-color: #4a5568 !important;
+    color: white !important;
+  }
+}
+
+.ant-select-item {
+  color: var(--text-color) !important;
+}
+
+.ant-select-item-option-selected,
+.ant-select-item-option-active {
+  background-color: var(--hover-bg) !important;
+}
+
+/* Switch toggle */
+.ant-switch {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.ant-switch-checked {
+  background-color: $primary-color !important;
+}
+
+.dark-theme .ant-switch {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Selected dropdown highlight */
+.ant-select-focused .ant-select-selector {
+  border-color: $primary-color !important;
+  box-shadow: 0 0 0 2px rgba($primary-color, 0.2) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .schema-builder-container .ant-row {
+    flex-direction: column;
+  }
+  
+  .schema-builder-container .ant-col {
+    margin-bottom: 24px;
+  }
+}

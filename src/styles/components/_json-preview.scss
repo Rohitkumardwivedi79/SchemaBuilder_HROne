@@ -1,0 +1,149 @@
+// JSON Preview styles
+.json-preview-card {
+  height: 100%;
+  
+  .json-preview-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: normal;
+  }
+  
+  .json-preview-container {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--card-bg);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--text-secondary);
+    }
+  }
+  
+  .json-preview {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    
+    &.light {
+      .json-key {
+        color: $json-key-light;
+      }
+      
+      .json-string {
+        color: $json-string-light;
+      }
+      
+      .json-number {
+        color: $json-number-light;
+      }
+      
+      .json-boolean {
+        color: $json-boolean-light;
+      }
+      
+      .json-null {
+        color: $json-null-light;
+      }
+      
+      .json-colon {
+        color: $json-bracket-light;
+      }
+      
+      // Different colors for different bracket depths
+      .json-bracket {
+        font-weight: bold;
+      }
+      
+      .json-curly-0 {
+        color: #e63946;
+      }
+      
+      .json-curly-1 {
+        color: #457b9d;
+      }
+      
+      .json-curly-2 {
+        color: #2a9d8f;
+      }
+      
+      .json-square-0 {
+        color: #f4a261;
+      }
+      
+      .json-square-1 {
+        color: #a8dadc;
+      }
+      
+      .json-square-2 {
+        color: #9c6644;
+      }
+    }
+    
+    &.dark {
+      .json-key {
+        color: $json-key-dark;
+      }
+      
+      .json-string {
+        color: $json-string-dark;
+      }
+      
+      .json-number {
+        color: $json-number-dark;
+      }
+      
+      .json-boolean {
+        color: $json-boolean-dark;
+      }
+      
+      .json-null {
+        color: $json-null-dark;
+      }
+      
+      .json-colon {
+        color: $json-bracket-dark;
+      }
+      
+      // Different colors for different bracket depths
+      .json-bracket {
+        font-weight: bold;
+      }
+      
+      .json-curly-0 {
+        color: #ff6b6b;
+      }
+      
+      .json-curly-1 {
+        color: #48bfe3;
+      }
+      
+      .json-curly-2 {
+        color: #72efdd;
+      }
+      
+      .json-square-0 {
+        color: #ffd166;
+      }
+      
+      .json-square-1 {
+        color: #06d6a0;
+      }
+      
+      .json-square-2 {
+        color: #f08080;
+      }
+    }
+  }
+}

@@ -1,0 +1,222 @@
+// Array and Nested Field styles
+
+// Array Field styles
+.array-field-wrapper {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  position: relative;
+  border: 1px solid var(--border-color);
+  
+  &.nesting-level-0 {
+    background-color: rgba($accent-color, 0.05);
+    border-left: 3px solid $accent-color;
+  }
+  
+  &.nesting-level-1 {
+    background-color: rgba($primary-color, 0.05);
+    border-left: 3px solid $primary-color;
+  }
+  
+  &.nesting-level-2 {
+    background-color: rgba($secondary-color, 0.05);
+    border-left: 3px solid $secondary-color;
+  }
+  
+  &.dark-theme {
+    &.nesting-level-0 {
+      background-color: rgba($accent-color, 0.15);
+    }
+    
+    &.nesting-level-1 {
+      background-color: rgba($primary-color, 0.15);
+    }
+    
+    &.nesting-level-2 {
+      background-color: rgba($secondary-color, 0.15);
+    }
+    
+    .field-name-input {
+      background-color: #1a202c !important;
+      color: white !important;
+    }
+    
+    .ant-select-selector {
+      background-color: #1a202c !important;
+    }
+  }
+  
+  .array-field-header {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    
+    .array-field-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-color);
+      position: relative;
+      padding-left: 12px;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 14px;
+        background-color: $accent-color;
+        border-radius: 2px;
+      }
+    }
+  }
+  
+  .array-field-type-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .array-field-label {
+    color: var(--text-color);
+    margin-right: 8px;
+  }
+  
+  .array-field-select {
+    width: 180px;
+    border-radius: 6px;
+  }
+  
+  .array-nested-container {
+    border-left: 3px solid $accent-color;
+    padding-left: 16px;
+    border-radius: 0 0 0 8px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-top: 16px;
+    
+    .array-nested-header {
+      margin-bottom: 12px;
+      
+      .array-nested-title {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--text-color);
+        position: relative;
+        padding-left: 12px;
+        
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 14px;
+          background-color: $accent-color;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+
+// Nested Field styles
+.nested-field-wrapper {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  position: relative;
+  border: 1px solid var(--border-color);
+  
+  &.nesting-level-0 {
+    background-color: rgba($secondary-color, 0.05);
+    border-left: 3px solid $secondary-color;
+  }
+  
+  &.nesting-level-1 {
+    background-color: rgba($accent-color, 0.05);
+    border-left: 3px solid $accent-color;
+  }
+  
+  &.nesting-level-2 {
+    background-color: rgba($primary-color, 0.05);
+    border-left: 3px solid $primary-color;
+  }
+  
+  &.dark-theme {
+    &.nesting-level-0 {
+      background-color: rgba($secondary-color, 0.15);
+    }
+    
+    &.nesting-level-1 {
+      background-color: rgba($accent-color, 0.15);
+    }
+    
+    &.nesting-level-2 {
+      background-color: rgba($primary-color, 0.15);
+    }
+    
+    .field-name-input {
+      background-color: #1a202c !important;
+      color: white !important;
+    }
+    
+    .ant-select-selector {
+      background-color: #1a202c !important;
+    }
+  }
+  
+  .nested-field-header {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    
+    .nested-field-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-color);
+      position: relative;
+      padding-left: 12px;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 14px;
+        background-color: $secondary-color;
+        border-radius: 2px;
+      }
+    }
+  }
+  
+  .nested-fields-container {
+    margin-bottom: 12px;
+  }
+  
+  .nested-field-button {
+    border-radius: 6px;
+    border-color: $secondary-color;
+    color: $secondary-color;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px var(--shadow);
+      background-color: rgba($secondary-color, 0.1);
+    }
+  }
+}
+
+.nested-array-card {
+  background-color: var(--hover-bg) !important;
+  border-radius: 8px;
+}
