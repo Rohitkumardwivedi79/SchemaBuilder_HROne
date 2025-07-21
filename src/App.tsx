@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { SchemaBuilder } from './components/SchemaBuilder'
 import ThemeToggle from './components/ThemeToggle'
 import { Layout, Typography, Badge, Tooltip } from 'antd'

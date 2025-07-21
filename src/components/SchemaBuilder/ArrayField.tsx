@@ -37,7 +37,7 @@ const ArrayField = ({ control, parentPath, nestingLevel }: ArrayFieldProps) => {
   useEffect(() => {
     if (!itemType) {
       // Use setValue from form methods instead of directly from control
-      const formMethods = control._formState.controllerRef?.current;
+      const formMethods = control._formState?.controllerRef?.current;
       if (formMethods) {
         formMethods.setValue(`${parentPath}.itemType`, 'string');
       }

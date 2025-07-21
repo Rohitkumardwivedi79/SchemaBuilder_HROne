@@ -1,4 +1,4 @@
-import { Control, Controller, UseFieldArrayAppend, UseFieldArrayRemove } from 'react-hook-form';
+import { Control, Controller, UseFieldArrayAppend } from 'react-hook-form';
 import { Input, Select, Switch, Space, Divider, Tooltip, Button } from 'antd';
 import { CloseOutlined, EditOutlined } from '@ant-design/icons';
 import NestedField from './NestedField';
