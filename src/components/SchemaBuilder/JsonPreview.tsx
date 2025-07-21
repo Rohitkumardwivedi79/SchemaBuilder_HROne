@@ -1,6 +1,5 @@
 import { Card } from 'antd';
 import { useTheme } from '../../context/ThemeContext';
-import React from 'react';
 
 interface JsonPreviewProps {
   schema: Record<string, any>;

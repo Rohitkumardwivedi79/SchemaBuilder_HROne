@@ -8,7 +8,7 @@ import { useTheme } from '../../context/ThemeContext';
 interface FieldRowProps {
   control: Control<any>;
   index: number;
-  remove: UseFieldArrayRemove;
+  remove: (index: number) => void;
   append: UseFieldArrayAppend<any, "fields">;
   nestingLevel?: number;
   parentPath?: string;

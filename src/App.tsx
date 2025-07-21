@@ -9,11 +9,9 @@ const { Header, Content, Footer } = Layout
 const { Title, Text } = Typography
 
 function App() {
-  const [schema, setSchema] = useState<Record<string, any>>({});    
   const { theme } = useTheme();
 
   const handleSchemaChange = (newSchema: Record<string, any>) => {
-    setSchema(newSchema);
     console.log('Schema updated:', newSchema);
   };
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Control, Controller, useWatch } from 'react-hook-form';
-import { Card, Select, Typography } from 'antd';
+import { Select, Typography } from 'antd';
 import NestedField from './NestedField';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -36,7 +36,11 @@ const ArrayField = ({ control, parentPath, nestingLevel }: ArrayFieldProps) => {
   // Set default item type if not already set
   useEffect(() => {
     if (!itemType) {
-      control.setValue(`${parentPath}.itemType`, 'string');
+      // Use setValue from form methods instead of directly from control
+      const formMethods = control._formState.controllerRef?.current;
+      if (formMethods) {
+        formMethods.setValue(`${parentPath}.itemType`, 'string');
+      }
     }
   }, [control, parentPath, itemType]);
 

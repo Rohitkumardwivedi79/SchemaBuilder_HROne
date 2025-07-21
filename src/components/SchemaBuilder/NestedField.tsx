@@ -1,5 +1,5 @@
 import { Control, useFieldArray } from 'react-hook-form';
-import { Button, Card } from 'antd';
+import { Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import FieldRow from './FieldRow';
 import { useTheme } from '../../context/ThemeContext';
@@ -17,13 +17,6 @@ const NestedField = ({ control, parentPath, nestingLevel }: NestedFieldProps) =>
     name: `${parentPath}.fields`,
   });
 
-  // No longer automatically adding a field when empty
-
-  // Simple remove function
-  const handleRemove = (index: number) => {
-    remove(index);
-  };
-
   return (
     <div className={`nested-field-wrapper ${theme}-theme nesting-level-${nestingLevel % 3}`}>
       <div className="nested-field-header">
@@ -35,8 +28,8 @@ const NestedField = ({ control, parentPath, nestingLevel }: NestedFieldProps) =>
             key={field.id}
             control={control}
             index={index}
-            remove={handleRemove}
-            append={append}
+            remove={(i) => remove(i)}
+            append={append as any}
             nestingLevel={nestingLevel + 1}
             parentPath={`${parentPath}.fields`}
           />

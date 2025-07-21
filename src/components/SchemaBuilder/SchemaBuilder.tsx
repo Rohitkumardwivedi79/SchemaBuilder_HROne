@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useForm, useFieldArray, useWatch } from 'react-hook-form';
-import { Button, Card, Col, Row, Typography } from 'antd';
+import { Button, Card, Col, Row } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import FieldRow from './FieldRow';
 import JsonPreview from './JsonPreview';
@@ -39,8 +39,6 @@ const SchemaBuilder = ({ initialSchema = {}, onChange }: SchemaBuilderProps) => 
   const hasEmptyFields = fieldsData.some(
     (field: any) => !field.name || !field.type
   );
-
-  // No longer automatically adding a field when empty
 
   useEffect(() => {
     const newSchema = generateSchemaFromFields(watchFields.fields || []);
@@ -118,11 +116,6 @@ const SchemaBuilder = ({ initialSchema = {}, onChange }: SchemaBuilderProps) => 
     return type;
   };
 
-  // Simple remove function
-  const handleRemove = (index: number) => {
-    remove(index);
-  };
-
   return (
     <Row gutter={24} className={`schema-builder-container ${theme}-theme`}>
       <Col xs={24} lg={12}>
@@ -137,7 +130,7 @@ const SchemaBuilder = ({ initialSchema = {}, onChange }: SchemaBuilderProps) => 
                 key={field.id}
                 control={control}
                 index={index}
-                remove={handleRemove}
+                remove={(i) => remove(i)}
                 append={append}
               />
             ))}
